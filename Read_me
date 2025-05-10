@@ -1,0 +1,29 @@
+runing python visulization:
+
+plot_slice: creates a map of a selected value in space (x,y):
+python3 plot_slice.py path_to_hdf5 Paramter(Pressure) out_put_name(or show)
+--logc for log scale
+--x_min and --x_max to cut a cirtin region
+--level to choose refinment level. auto picks biggest levle
+
+to run plot slice in sucssetion and create a vid:
+python3 runloop.py ~/Desktop/hdf5/sharpe_base_no_rho_reaction.out2 Pressure test_mpi
+
+plot_line: creates 2d graph of paramters of your choice, can have a few data sets on one graph:
+python3 plot_lines.py file_1,file_2,.. x_axis_1,x_axis_2,.. y_axis_1,y_axis_2,.. outputfile_path_and_name(show)
+no characters appearing between two commas indicate the previous entry should be repeated
+--styles= --, -, o
+--x_label '$P$,$...$'
+--y_label '$T$,$...$'
+--labels '$E=20$,$...$' (legend)
+
+plot_line_modifide_with_znd also creates a pdf map of the same points and plots the znd points on the graph (need to add --profile_name argumant):
+--profile_name Epsilon_5_Q_50_1.2
+joint_pdf is like the modifed version but can only take one data set at a time and you can cut the space in wich it gets the data
+--x_min 111
+--x_max 222
+
+python3 plot_lines_modifide_with_znd.py ../new_data/Epsilon_3.116_Q_100_G_1.2/hdf5/Epsilon_3.116_Q_100_G_1.2.out2.09000.athdf,../new_data/Epsilon_3.116_Q_100_G_1.2/hdf5/Epsilon_3.116_Q_100_G_1.2.out2.09100.athdf,../new_data/Epsilon_3.116_Q_100_G_1.2/hdf5/Epsilon_3.116_Q_100_G_1.2.out2.09200.athdf Temperature Pressure --styles=o,o,o --x_label '$T/T0$' --y_label '$P/P0$' --labels '$9000$,$9100$,$9200$' --profile_name Epsilon_3.116_Q_100_G_1.2 ../new_data/Epsilon_3.116_Q_100_G_1.2/Epsilon_3.116_Q_100_G_1.2_normilezed_9000,9100,9200
+
+python3 joint_pdf.py ../case_files/base_case_E_10/hdf5/base_case_E_10.out2.09000.athdf Pressure Temperature --styles=o --x_label '$P$' --y_label '$T$' --labels '$E=10$' --x_min 2000 --x_max 3000 ~/Desktop/my_data/PDF_plots/name_output
+
