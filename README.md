@@ -42,9 +42,9 @@ python joint_pdf.py data.athdf Pressure Temperature output_plot \
 
 ## Based on Athena++ Plot Tools
 
-These scripts are adapted from `plot_line.py` used by the [Athena++ code](https://www.astro.princeton.edu/~jstone/Athena++/), a high-performance astrophysical hydrodynamics code.
+These scripts are adapted from `plot_line.py` used by the [Athena++](https://github.com/PrincetonUniversity/athena-public-version) a high-performance astrophysical hydrodynamics code.
 
-> Athena++ plotting documentation: [Athena++ official documentation](https://www.astro.princeton.edu/~jstone/Athena++/)
+> Athena++ plotting documentation: [Athena++ official documentation](https://github.com/PrincetonUniversity/athena/wiki/Plotting-Scripts)
 
 ## File Structure Expectations
 
